@@ -1,0 +1,17 @@
+<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+<%=form_for @user , url: "/create_user" do |f| %>
+
+<%= f.label 'First_Name' %>
+<%= f.text_field :first_name %>
+
+<%= f.label 'Last_Name' %>
+<%= f.text_field :last_name %>
+<%= f.label 'Email' %>
+<%= f.text_field :email %>
+<%= f.label 'Password' %>
+<%= f.text_field :encrypted_password %>
+<%= f.label 'Contact Number' %>
+<%= f.text_field :contact_number %>
+<%= f.submit "submit" %>
+
+<% end %>
