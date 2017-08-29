@@ -7,12 +7,16 @@ before_action :configure_sign_in_params, only: [:create]
   end
 
   def login
-    if current_user.present? && current_user.role == 'user'
-      redirect_to '/'
-    elsif current_user.present? || current_user.role == 'admin' || current_user.role == 0
-      redirect_to '/user/new'
+    if current_user.present? 
+      if current_user.role == 2
+        redirect_to '/dashboard'
+      elsif current_user.role == 1
+        redirect_to '/user/new'
+      else
+        @user = User.new
+      end
     else
-      @user = User.new
+      redirect_to '/users/sign_in'
     end
   end
 

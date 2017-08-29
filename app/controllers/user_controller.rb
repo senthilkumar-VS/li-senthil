@@ -5,8 +5,7 @@ def new
 	@user = User.new
 end
 
-def login
-
+def dashboard
 end
 
 def create

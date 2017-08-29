@@ -78,5 +78,4 @@ class User
     field   :is_active,                         type: Boolean       
     field   :registered_by_id,					type: Integer
     field   :engaged_by_id,						type: Integer
-
 end

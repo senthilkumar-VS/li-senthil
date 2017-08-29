@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   post '/create_user' => 'user#create'
 
+  get '/dashboard'  => 'user#dashboard'
+
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks", sessions: 'users/sessions', registrations: 'users/registrations', passwords: 'users/passwords', :confirmations => 'users/confirmations'}
   
   devise_scope :user do
